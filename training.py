@@ -4,7 +4,7 @@ import os
 import numpy as np
 from PIL import Image
 
-def assure_path_exists(path):
+def assure_path(path):
     dir = os.path.dirname(path)
     if not os.path.exists(dir):
         os.makedirs(dir)
@@ -52,5 +52,5 @@ print(ids)
 recognizer.train(faces, np.array(idss))
 
 # Saving the model into s_model.yml
-assure_path_exists('saved_model/')
+assure_path('saved_model/')
 recognizer.write('saved_model/s_model.yml')
