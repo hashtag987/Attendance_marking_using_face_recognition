@@ -1,10 +1,10 @@
 import cv2
 import os
 import random
-import sqlite3
+#import sqlite3
 #from training import ids
 #conn = sqlite3.connect('database.db')
-def assure_path_exists(path):
+def assure_path(path):
     dir = os.path.dirname(path)
     if not os.path.exists(dir):
         os.makedirs(dir)
@@ -17,7 +17,7 @@ face_detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 # Set unique id for each individual person
 face_id = random.randrange(101,999,1)
 count = 0
-assure_path_exists("training_data/")
+assure_path("training_data/")
 uname = input("Enter ur name: ")
 
 # c = conn.cursor()

@@ -4,7 +4,7 @@ import numpy as np
 import os 
 from training import ids
 import sqlite3
-def assure_path_exists(path):
+def assure_path(path):
     dir = os.path.dirname(path)
     if not os.path.exists(dir):
         os.makedirs(dir)
@@ -13,7 +13,7 @@ def assure_path_exists(path):
 # c = conn.cursor()
 # Create Local Binary Patterns Histograms for face recognization
 recognizer = cv2.face.LBPHFaceRecognizer_create()
-assure_path_exists("saved_model/")
+assure_path("saved_model/")
 recognizer.read('saved_model/s_model.yml')
 # Load prebuilt classifier for Frontal Face detection
 cascadePath = "haarcascade_frontalface_default.xml"
